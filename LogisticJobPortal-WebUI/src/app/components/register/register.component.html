@@ -1,0 +1,62 @@
+<br>
+<!-- *ngIf="!isAuthenticated" -->
+
+<form #registerForm="ngForm" (ngSubmit)="register()" >
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-9 col-md-7 col-lg-5 mx-auto" style="margin-top: 80px;">
+                <div class="card card-signin my-5">
+                    <div class="card-body">
+                        <!--<div class="img-div" style="height:100px; width:auto; margin:5px; padding-bottom:10px;">
+                            <img src="src/assets/img/register.png" class="card-img-top" alt="..." > 
+                        </div>-->
+                        <br/>
+                        <h4 class="card-title text-center text-muted">Kayıt Ekranı</h4>
+
+                        <div class="form-label-group" style="padding-top:10px;">
+                            <input class="form-control mr-sm-2" type="text" name="FirstName" [(ngModel)]="userRegister.FirstName" placeholder="İsim"
+                                required />
+                        </div>
+
+                        <br />
+                        <div class="form-label-group">
+                            <input class="form-control mr-sm-2" type="text" name=LastName [(ngModel)]="userRegister.LastName"  placeholder="Soyisim"
+                                required />
+                        </div>
+
+                        <br />
+                        <div class="form-label-group">
+                            <input class="form-control mr-sm-2" type="email" name="Email" [(ngModel)]="userRegister.Email"  placeholder="Email"
+                                required />
+                        </div>
+
+                        <br />
+                        <div class="form-label-group">
+                            <input class="form-control mr-sm-2" type="password" name=Password [(ngModel)]="userRegister.Password" placeholder="Sifre"
+                                required />
+                        </div>
+                        
+                        <br />
+                         <div class="form-row" >
+                            <div class="form-group col-md-6" col-md-6>
+                                <label class="text-muted" >Kayıt türünü seçin.</label> </div>
+                                <br/>
+                                <div class="form-group col-md-6" col-md-6>
+                                <select class="form-control" >
+                                    <option  value="A">Ziyaretçi</option> 
+                                    <option  value="B">Araç Sahibi</option> 
+                                    <option  value="C">Yük Sahibi</option> 
+                                </select>
+                        <span class="help-block text-danger" name=UserType [(ngModel)]="userRegister.UserType" placeholder="Seciniz" required>Bu alan zorunludur</span>
+                        </div>  </div>
+
+                        <br /><br />
+                        <button class="btn btn-lg btn-success btn-block text-uppercase" [disabled]="!registerForm.valid" type="submit">Kayıt Ol</button>
+                        <hr class="my-4">
+                        <button  type="button" class="btn btn-link btn-block" (click)="goToLogin()" >Zaten Hesabını Var Mı? Giriş Yapın.</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

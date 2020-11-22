@@ -1,0 +1,12 @@
+<!-- <app-navbar *ngIf="isAuth"></app-navbar>
+<app-register *ngIf="!isAuth"></app-register>
+<router-outlet *ngIf="isAuth"></router-outlet> -->
+
+
+<app-navbar *ngIf = "isAuth"></app-navbar>
+
+<div class="app">
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</div>
